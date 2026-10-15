@@ -20,3 +20,8 @@ def risk_level(age, cholesterol, bmi):
 def average_risk(patients):
     total = sum(p["score"] for p in patients)
     return total / len(patients)
+    
+def format_report(name, age, cholesterol, weight_kg, height_m):
+    bmi = calculate_bmi(weight_kg, height_m)
+    level = risk_level(age, cholesterol, bmi)
+    return f"Patient {name}: BMI {bmi:.1f}, risk {level}"
